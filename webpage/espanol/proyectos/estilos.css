@@ -49,10 +49,11 @@ body {
     margin-bottom: 100px;
     background-color: white;
     overflow-x: hidden;
-    max-width: 100%; /* ajusta el valor a tu preferencia */
+    max-width: 100%;
+    /* ajusta el valor a tu preferencia */
     margin-left: 20;
     margin-right: 20px;
-  }
+}
 
 
 /* Estilos de las secciones */
@@ -74,9 +75,9 @@ section h2 {
     margin-bottom: 100px;
     margin-left: 0;
     margin-right: 0;
-  }
+}
 
-  
+
 .game {
     display: inline-flex;
     position: relative;
@@ -88,13 +89,13 @@ section h2 {
     border-radius: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-  }
-  
-  .game:hover .overlay {
+}
+
+.game:hover .overlay {
     opacity: 0.8;
-  }
-  
-  .game .overlay {
+}
+
+.game .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -108,13 +109,13 @@ section h2 {
     align-items: center;
     justify-content: center;
     text-align: center;
-  }
-  
-  .game .overlay h2 {
+}
+
+.game .overlay h2 {
     color: white;
     margin: 0;
     font-size: 1.5rem;
-  }
+}
 
 /* Estilos del pie de página */
 footer {
@@ -127,7 +128,3 @@ footer {
     padding: 10px;
     text-align: center;
 }
-
-
-
-  
