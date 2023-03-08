@@ -90,9 +90,9 @@ footer {
     width: 100px; /* reducimos el ancho */
     height: 100px; /* reducimos la altura */
     font-size: 50px; /* reducimos el tamaño del número */
-    border: 1px solid rgb(168, 168, 168);
+    border: 1px solid rgb(255, 255, 255);
     text-align: center;
-    color: rgb(7, 255, 69);
+    color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
