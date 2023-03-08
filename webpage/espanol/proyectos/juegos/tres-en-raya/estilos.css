@@ -40,7 +40,6 @@ nav li a {
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    margin-top: 110px;
     background-color: white;
 }
 
@@ -63,15 +62,14 @@ footer {
 }
 
 .contenedor-juego {
-    height: 100vh;
-    max-width: 1250px;
+    height: 80vh; /* reducimos la altura */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     text-align: center;
-
+    margin-top: 80px; /* Ajusta este valor según el tamaño de tu encabezado */
 }
 
 .juego-titulo,
@@ -80,15 +78,18 @@ footer {
 }
 
 .juego-cuadricula {
-
+    width: 300px; /* reducimos el ancho */
+    height: 300px; /* reducimos la altura */
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, 1fr);
     gap: 0;
 }
 
 .cuadro {
-    width: 3rem;
-    height: 3rem;
+    width: 100px; /* reducimos el ancho */
+    height: 100px; /* reducimos la altura */
+    font-size: 50px; /* reducimos el tamaño del número */
     border: 1px solid rgb(168, 168, 168);
     text-align: center;
     color: rgb(7, 255, 69);
@@ -100,27 +101,22 @@ footer {
 }
 
 .cuadro:hover {
-
     background-color: #cccc;
-
 }
 
 .juego-boton {
     display: inline-flex;
-    padding: 1rem 1rem;
+    padding: 0.5rem 1rem; /* reducimos el padding */
     background: red;
     color: white;
     cursor: pointer;
     justify-content: center;
     font-weight: bold;
     transition: color ease-out 0.3s;
-
 }
 
 .juego-boton:hover {
-
     background: white;
     color: red;
     border: 1px solid red;
-
 }
