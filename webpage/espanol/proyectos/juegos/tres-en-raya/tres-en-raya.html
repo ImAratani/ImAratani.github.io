@@ -63,39 +63,39 @@
         [0, 4, 8], [2, 4, 6]
         ];
         function comprobar() {
-            juego_btn.style.cssText = jBtn_d;
+    juego_btn.style.cssText = jBtn_d;
 
-            if (hayGanador("X")) {
-                info.innerHTML = '"X" Gana';
-                state = true;
-                deshabilitarCasillas();
-            } else if (hayGanador("O")) {
-                info.innerHTML = '"O" Gana';
-                state = true;
-                deshabilitarCasillas();
-            } else if (hayEmpate()) {
-                info.innerHTML = "Empate";
-                deshabilitarCasillas(false);
-            }
-        }
+    if (hayGanador("X")) {
+        info.innerHTML = '"X" Gana';
+        state = true;
+        deshabilitarCasillas();
+    } else if (hayGanador("O")) {
+        info.innerHTML = '"O" Gana';
+        state = true;
+        deshabilitarCasillas();
+    } else if (hayEmpate()) {
+        info.innerHTML = "Empate";
+        deshabilitarCasillas(false);
+    }
+}
 
-        function hayGanador(jugador) {
-            for (var j = 0; j < pWin.length; j++) {
-                if (cuadro_btn[pWin[j][0]].innerHTML === jugador && cuadro_btn[pWin[j][1]].innerHTML === jugador && cuadro_btn[pWin[j][2]].innerHTML === jugador) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        function hayEmpate() {
-            for (var i = 0; i < cuadro_btn.length; i++) {
-                if (cuadro_btn[i].innerHTML === "") {
-                    return false;
-                }
-            }
+function hayGanador(jugador) {
+    for (var j = 0; j < pWin.length; j++) {
+        if (cuadro_btn[pWin[j][0]].innerHTML === jugador && cuadro_btn[pWin[j][1]].innerHTML === jugador && cuadro_btn[pWin[j][2]].innerHTML === jugador) {
             return true;
         }
+    }
+    return false;
+}
+
+function hayEmpate() {
+    for (var i = 0; i < cuadro_btn.length; i++) {
+        if (cuadro_btn[i].innerHTML === "") {
+            return false;
+        }
+    }
+    return true;
+}
 
         function deshabilitarCasillas(y) {
             (y == false) ? i = Math.floor(Math.random() * (3 - 1)) + 1 : 0;
