@@ -1,0 +1,116 @@
+/* Estilos para la página web de los guisantes de Mendel */
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  p {
+    line-height: 1.5;
+  }
+  
+  /* Estilos para las secciones */
+  section {
+    margin: 40px 0;
+  }
+  
+  section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para la simulación */
+  #simulacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+  }
+  
+  .padres-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .padre {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+    background-color: #fff;
+  }
+  
+  #btn-cruzar {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  #btn-cruzar:hover {
+    background-color: #3e8e41;
+  }
+  
+  .resultados {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .hijo {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+    background-color: #fff;
+  }
+  
+  /* Estilos para el formulario de conclusiones */
+  #conclusiones {
+    margin: 40px 0;
+  }
+  
+  label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  
+  

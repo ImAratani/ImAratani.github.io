@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Modal de idiomas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      margin-top: 110px;
+    }
+
+    /* Estilos del modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 30%;
+      text-align: center;
+      font-size: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Estilos de los botones de idioma */
+    .lang-btn {
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #333;
+      color: white;
+    }
+
+    /* Estilos de las banderas de los idiomas */
+    .flag {
+      height: 30px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="modal">
+    <div class="modal-content">
+      <h2>A la pagina principal</h2>
+      <button id="btn-espanol" class="lang-btn">
+          Aceptar
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Obtener el modal
+    var modal = document.querySelector(".modal");
+
+    // Obtener los botones de idioma
+    var btnEspanol = document.getElementById("btn-espanol");
+
+    // Agregar eventos a los botones
+    btnEspanol.addEventListener("click", function () {
+      window.location.href = "simulador/genetica/genetica.html";
+    });
+
+    // Mostrar el modal al cargar la página
+    modal.style.display = "block";
+  </script>
+</body>
+
+</html>
