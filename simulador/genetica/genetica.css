@@ -48,7 +48,7 @@ body {
 h1 {
     text-align: center;
     margin-top: 20px;
-    color: #ff9e9e;
+    color: #77dd77;
     text-shadow: 2px 2px #fff;
 }
 
@@ -65,7 +65,7 @@ form {
 
 label {
     margin-right: 10px;
-    color: #ff9e9e;
+    color: #77dd77;
 }
 
 select {
@@ -74,7 +74,7 @@ select {
 
 button {
     margin-top: 10px;
-    background-color: #ff9e9e;
+    background-color: #77dd77;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -85,7 +85,7 @@ button {
 }
 
 button:hover {
-    background-color: #ff9e9e;
+    background-color: #77dd77;
 }
 
 #resultado {
@@ -95,7 +95,7 @@ button:hover {
 
 #resultado h2 {
     margin-bottom: 10px;
-    color: #ff9e9e;
+    color: #77dd77;
 }
 
 #probabilidad {
@@ -124,7 +124,7 @@ footer p {
     right: 0;
     bottom: 0;
     width: 200px;
-    background-color: #ff9e9e;
+    background-color: #77dd77;
     padding-top: 10px;
 
     margin-left: 200px;
@@ -151,11 +151,11 @@ footer p {
   }
   
   #menu ul li a:hover {
-    color: #ff9e9e;
+    color: #77dd77;
   }
 
   .caracteristica {
-    color: #ff9e9e;
+    color: #77dd77;
 }
 
 
