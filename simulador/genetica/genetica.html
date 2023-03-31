@@ -10,101 +10,104 @@
 <body>
     <div id="menu">
         <ul>
-          <li><a href="../mendel/mendel.html">Johann Mendel</a></li>
-          <li><a href="#">Aquí</a></li>
-          <li><a href="../cuestionario/cuestionario.html">Cuestionario</a></li>
-          <li><a href="#">Algo</a></li>
+            <li><a href="../mendel/mendel.html">Johann Mendel</a></li>
+            <li><a href="#">Aquí</a></li>
+            <li><a href="../cuestionario/cuestionario.html">Cuestionario</a></li>
+            <li><a href="#">Algo</a></li>
         </ul>
-      </div>
+    </div>
     <div class="container">
         <div id="allele-inputs">
-            <label for="alleleA">Alelo A:</label>
-            <input type="text" id="alleleA" placeholder="A">
-            <label for="allelea">Alelo a:</label>
-            <input type="text" id="allelea" placeholder="a">
-            <label for="alleleB">Alelo B:</label>
-            <input type="text" id="alleleB" placeholder="B">
-            <label for="alleleb">Alelo b:</label>
-            <input type="text" id="alleleb" placeholder="b">
-            <label for="alleleC">Alelo C:</label>
-            <input type="text" id="alleleC" placeholder="C">
-            <label for="allelec">Alelo c:</label>
-            <input type="text" id="allelec" placeholder="c">
-          </div>
-          <div id="main-container">
-        <h1>Simulador de Genética Mendeliana</h1>
-        <p>
-            La genética mendeliana es el estudio de la herencia genética. Se basa en las leyes de Mendel, quien
-            descubrió que los rasgos se heredan de forma independiente y en proporciones específicas. Este simulador
-            utiliza las leyes de Mendel para predecir la probabilidad de que un hijo tenga ciertos rasgos en función de
-            los rasgos de sus padres.
-        </p>
-        <form>
-<label for="caracteristica1_padre1">Característica 1:</label>
-<select id="caracteristica1_padre1">
-    <option value="valor0"></option>
-    <option value="valor1">AA</option>
-    <option value="valor2">Aa</option>
-    <option value="valor3">aa</option>
-</select>
+            <label for="alleleA"></label>
+            <input type="text" id="alleleA" placeholder="Gen A">
+            <label for="allelea"></label>
+            <input type="text" id="allelea" placeholder="Gen a">
+            <label for="alleleB"></label>
+            <input type="text" id="alleleB" placeholder="Gen B">
+            <label for="alleleb"></label>
+            <input type="text" id="alleleb" placeholder="Gen b">
+            <label for="alleleC"></label>
+            <input type="text" id="alleleC" placeholder="Gen C">
+            <label for="allelec"></label>
+            <input type="text" id="allelec" placeholder="Gen c">
 
-<label for="caracteristica2_padre1">Característica 2:</label>
-<select id="caracteristica2_padre1">
-    <option value="valor0"></option>
-    <option value="valor1">BB</option>
-    <option value="valor2">Bb</option>
-    <option value="valor3">bb</option>
-</select>
-
-<label for="caracteristica3_padre1">Característica 3:</label>
-<select id="caracteristica3_padre1">
-    <option value="valor0"></option>
-    <option value="valor1">CC</option>
-    <option value="valor2">Cc</option>
-    <option value="valor3">cc</option>
-</select>
-</select></p>
-<label for="caracteristica1_padre2">Característica 1:</label>
-<select id="caracteristica1_padre2">
-    <option value="valor0"></option>
-    <option value="valor1">AA</option>
-    <option value="valor2">Aa</option>
-    <option value="valor3">aa</option>
-</select>
-
-<label for="caracteristica2_padre2">Característica 2:</label>
-<select id="caracteristica2_padre2">
-    <option value="valor0"></option>
-    <option value="valor1">BB</option>
-    <option value="valor2">Bb</option>
-    <option value="valor3">bb</option>
-</select>
-
-<label for="caracteristica3_padre2">Característica 3:</label>
-<select id="caracteristica3_padre2">
-    <option value="valor0"></option>
-    <option value="valor1">CC</option>
-    <option value="valor2">Cc</option>
-    <option value="valor3">cc</option>
-</select>
-            <p>
-                <button type="button" onclick="calcularProbabilidad()">Calcular Probabilidad</button>
-        </form>
-        <div id="resultado">
-            <h2>Resultado</h2>
-            <p id="probabilidad_car1"></p> 
-            <p id="probabilidad_car2"></p>
-            <p id="probabilidad_car3"></p>
         </div>
-        <button onclick="generarAleatorio()">Generar valores aleatorios</button>
+        <div id="main-container">
+            <h1>Simulador de Genética Mendeliana</h1>
+            <p>
+                La genética mendeliana es el estudio de la herencia genética. Se basa en las leyes de Mendel, quien
+                descubrió que los rasgos se heredan de forma independiente y en proporciones específicas. Este simulador
+                utiliza las leyes de Mendel para predecir la probabilidad de que un hijo tenga ciertos rasgos en función
+                de
+                los rasgos de sus padres.
+            </p>
+            <form>
+                <label for="caracteristica1_padre1">Característica 1:</label>
+                <select id="caracteristica1_padre1">
+                    <option value="valor0"></option>
+                    <option value="valor1">AA</option>
+                    <option value="valor2">Aa</option>
+                    <option value="valor3">aa</option>
+                </select>
+
+                <label for="caracteristica2_padre1">Característica 2:</label>
+                <select id="caracteristica2_padre1">
+                    <option value="valor0"></option>
+                    <option value="valor1">BB</option>
+                    <option value="valor2">Bb</option>
+                    <option value="valor3">bb</option>
+                </select>
+
+                <label for="caracteristica3_padre1">Característica 3:</label>
+                <select id="caracteristica3_padre1">
+                    <option value="valor0"></option>
+                    <option value="valor1">CC</option>
+                    <option value="valor2">Cc</option>
+                    <option value="valor3">cc</option>
+                </select>
+                </select></p>
+                <label for="caracteristica1_padre2">Característica 1:</label>
+                <select id="caracteristica1_padre2">
+                    <option value="valor0"></option>
+                    <option value="valor1">AA</option>
+                    <option value="valor2">Aa</option>
+                    <option value="valor3">aa</option>
+                </select>
+
+                <label for="caracteristica2_padre2">Característica 2:</label>
+                <select id="caracteristica2_padre2">
+                    <option value="valor0"></option>
+                    <option value="valor1">BB</option>
+                    <option value="valor2">Bb</option>
+                    <option value="valor3">bb</option>
+                </select>
+
+                <label for="caracteristica3_padre2">Característica 3:</label>
+                <select id="caracteristica3_padre2">
+                    <option value="valor0"></option>
+                    <option value="valor1">CC</option>
+                    <option value="valor2">Cc</option>
+                    <option value="valor3">cc</option>
+                </select>
+                <p>
+                    <button type="button" onclick="calcularProbabilidad()">Genotipo de la descendencia</button>
+                    <button type="button" onclick="calcularFenotipo()">Fenotipo de la descendencia</button>
+            </form>
+            <div id="resultado">
+                <h2>Resultado</h2>
+                <p id="probabilidad_car1"></p>
+                <p id="probabilidad_car2"></p>
+                <p id="probabilidad_car3"></p>
+            </div>
 
 
-        <footer>
-            <p>Desarrollo y mantenimiento de la pagina a cargo de TheX3Nzy. Para cualquier consulta, duda o sugerencia
-                dirijase a ImMadatani@gmail.com</p>
-        </footer>
-    </div>
-    <script src="genetica.js"></script>
+            <footer>
+                <p>Desarrollo y mantenimiento de la pagina a cargo de TheX3Nzy. Para cualquier consulta, duda o
+                    sugerencia
+                    dirijase a ImMadatani@gmail.com</p>
+            </footer>
+        </div>
+        <script src="genetica.js"></script>
 </body>
 
 </html>

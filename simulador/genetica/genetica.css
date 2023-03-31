@@ -9,12 +9,15 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   
   #allele-inputs {
     width: 100px;
-    height: 100%;
-    margin-right: 20px;
+    height: 50%;
+    margin-right: 10px;
+    margin-left: 10 px;
   }
 
   
@@ -30,19 +33,22 @@ body {
   
   #main-container {
     width: 100%;
-    max-width: 800px; /* ajusta el ancho máximo a tu gusto */
+    max-width: 700px; /* ajusta el ancho máximo a tu gusto */
     margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-  
+    padding-left: 90px;
+    padding-right: 90px;
+    margin-right: 200px;
+    
   }
   
 
 h1 {
     text-align: center;
     margin-top: 20px;
-    color: #f08080;
+    color: #ff9e9e;
     text-shadow: 2px 2px #fff;
 }
 
@@ -59,7 +65,7 @@ form {
 
 label {
     margin-right: 10px;
-    color: #f08080;
+    color: #ff9e9e;
 }
 
 select {
@@ -68,13 +74,14 @@ select {
 
 button {
     margin-top: 10px;
-    background-color: #f08080;
+    background-color: #ff9e9e;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    
 }
 
 button:hover {
@@ -88,7 +95,7 @@ button:hover {
 
 #resultado h2 {
     margin-bottom: 10px;
-    color: #f08080;
+    color: #ff9e9e;
 }
 
 #probabilidad {
@@ -117,8 +124,10 @@ footer p {
     right: 0;
     bottom: 0;
     width: 200px;
-    background-color: #f08080;
+    background-color: #ff9e9e;
     padding-top: 10px;
+
+    margin-left: 200px;
   }
   
   
@@ -146,7 +155,7 @@ footer p {
   }
 
   .caracteristica {
-    color: #f08080;
+    color: #ff9e9e;
 }
 
 
