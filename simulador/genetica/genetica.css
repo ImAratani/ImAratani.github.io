@@ -7,13 +7,37 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  #allele-inputs {
+    width: 100px;
+    height: 100%;
+    margin-right: 20px;
+  }
+
+  
+  #allele-inputs label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  #allele-inputs input {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  #main-container {
+    width: 100%;
+    max-width: 800px; /* ajusta el ancho máximo a tu gusto */
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
     border-radius: 5px;
-}
+  
+  }
+  
 
 h1 {
     text-align: center;
@@ -125,4 +149,9 @@ footer p {
     color: #f08080;
 }
 
+
+  
+  
+  
+  
   
