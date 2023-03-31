@@ -48,6 +48,31 @@ function calcularProbabilidad() {
   
     document.getElementById("probabilidad_car1").innerHTML = '<span class="caracteristica">Caracteristica 1: </span><span>' + probabilidad_car1 + '</span>';
     document.getElementById("probabilidad_car2").innerHTML = '<span class="caracteristica">Caracteristica 2: </span><span>' + probabilidad_car2 + '</span>';
-    document.getElementById("probabilidad_car3").innerHTML = '<span class="caracteristica">Caracteristica 3: </span><span>' + probabilidad_car3 + '</span>';
-  }
+    document.getElementById("probabilidad_car3").innerHTML = '<span class="caracteristica">Caracteristica 3: </span><span>' + probabilidad_car3 + '</span>';     
+    }
+    
+    function generarAleatorio() {
+        // Generar aleatoriamente los valores de las características de los padres
+        var valores_car1 = ["valor1", "valor2", "valor3"];
+        var valores_car2 = ["valor1", "valor2", "valor3"];
+        var valores_car3 = ["valor1", "valor2", "valor3"];
+        var padre1_car1 = valores_car1[Math.floor(Math.random() * valores_car1.length)];
+        var padre1_car2 = valores_car2[Math.floor(Math.random() * valores_car2.length)];
+        var padre1_car3 = valores_car3[Math.floor(Math.random() * valores_car3.length)];
+        var padre2_car1 = valores_car1[Math.floor(Math.random() * valores_car1.length)];
+        var padre2_car2 = valores_car2[Math.floor(Math.random() * valores_car2.length)];
+        var padre2_car3 = valores_car3[Math.floor(Math.random() * valores_car3.length)];
+      
+        // Actualizar los valores en la página
+        document.getElementById("caracteristica1_padre1").value = padre1_car1;
+        document.getElementById("caracteristica2_padre1").value = padre1_car2;
+        document.getElementById("caracteristica3_padre1").value = padre1_car3;
+        document.getElementById("caracteristica1_padre2").value = padre2_car1;
+        document.getElementById("caracteristica2_padre2").value = padre2_car2;
+        document.getElementById("caracteristica3_padre2").value = padre2_car3;
+      
+        // Calcular la probabilidad
+        calcularProbabilidad();
+      }
+      
   
