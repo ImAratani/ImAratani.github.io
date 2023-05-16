@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Redirección</title>
+  <title>Loading Animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .content {
+      width: 30px;
+      height: 30px;
+      margin: 0 auto;
+      border: 2px solid #ddd;
+      border-left-color: #1f8ecd;
+      border-radius: 30px; /* border-radius: 50% */
+      animation: animation-rotate 950ms cubic-bezier(.64,2,.56,.6) infinite;
+    }
+
+    @keyframes animation-rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <script>
+    setTimeout(function() {
+      window.location.href = `b'day/countdown/countdown.html`;
+    }, 10000); // Redirige después de 5 segundos (5000 milisegundos)
+  </script>
 </head>
 <body>
-  <p>Redireccionando...</p>
-  <button onclick="window.location.href = `b'day/countdown/countdown.html`;">Ir al archivo</button>
+  <div class="container">
+    <div class="content"></div>
+    <br>
+    <p>Espera</p>
+  </div>
 </body>
 </html>
+
