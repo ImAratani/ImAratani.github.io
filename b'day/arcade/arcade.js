@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let characterX = stepSize;
     let characterY = stepSize;
+    let hasInteracted = false;
 
     function moveCharacter(event) {
         const key = event.key.toLowerCase();
@@ -35,7 +36,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 character.style.top = characterY + 'px';
                 character.style.left = characterX + 'px';
+
+                if (hasInteracted) {
+                    const karinaObject = document.getElementById('karina-object');
+                    karinaObject.style.display = 'block';
+                    const objectOffsetX = dx * -1; // Offset en el eje X
+                    const objectOffsetY = dy * -1; // Offset en el eje Y
+                    const newObjectX = characterX + objectOffsetX * stepSize;
+                    const newObjectY = characterY + objectOffsetY * stepSize;
+                    karinaObject.style.top = newObjectY + 'px';
+                    karinaObject.style.left = newObjectX + 'px';
+                }
+                
             }
+        }
+    }
+
+    function handleKarinaObjectClick() {
+        const shouldStopFollowing = confirm('¿Qué acción deseas realizar con karina-object?\n\n- Cancelar: No hacer nada\n- Aceptar: Dejar de seguir al personaje');
+
+        if (shouldStopFollowing) {
+            // Dejar de seguir al personaje
+            const karinaObject = document.getElementById('karina-object');
+            karinaObject.style.display = 'none';
         }
     }
 
@@ -60,9 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function interact() {
         alert('Object clicked!');
+        hasInteracted = true;
         // Aquí puedes agregar tu lógica para la interacción con el objeto
     }
+
+    const karinaObject = document.getElementById('karina-object');
+    karinaObject.addEventListener('click', handleKarinaObjectClick);
 });
+
+
 
 
 
