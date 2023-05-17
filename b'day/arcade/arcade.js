@@ -1,69 +1,71 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const room = document.getElementById('room');
-    const player = document.getElementById('player');
-    const objects = document.getElementsByClassName('object');
+document.addEventListener('DOMContentLoaded', () => {
+    const character = document.getElementById('character');
+    const stepSize = 50;
+    const gridWidth = 16;
+    const gridHeight = 8;
+    const mapWidth = gridWidth * stepSize;
+    const mapHeight = gridHeight * stepSize;
 
-    const gridSize = 50;
-    const roomWidth = room.clientWidth;
-    const roomHeight = room.clientHeight;
-    const maxPositionX = roomWidth - player.offsetWidth;
-    const maxPositionY = roomHeight - player.offsetHeight;
+    let characterX = stepSize;
+    let characterY = stepSize;
 
-    let playerPositionX = 0;
-    let playerPositionY = 0;
+    function moveCharacter(event) {
+        const key = event.key.toLowerCase();
+        const directions = {
+            w: [0, -1], // Up
+            s: [0, 1], // Down
+            a: [-1, 0], // Left
+            d: [1, 0], // Right
+        };
 
-    function movePlayer(x, y) {
-        const newX = playerPositionX + x;
-        const newY = playerPositionY + y;
+        if (key in directions) {
+            const [dx, dy] = directions[key];
+            const newCharacterX = characterX + dx * stepSize;
+            const newCharacterY = characterY + dy * stepSize;
 
-        if (newX >= 0 && newX <= maxPositionX && newY >= 0 && newY <= maxPositionY) {
-            player.style.left = newX + 'px';
-            player.style.top = newY + 'px';
-            playerPositionX = newX;
-            playerPositionY = newY;
-            checkInteractions();
-        }
-    }
+            // Verifica que el personaje no salga de los límites del cuadrado contenedor
+            if (
+                newCharacterX >= 0 && // Límite izquierdo
+                newCharacterX < mapWidth && // Límite derecho
+                newCharacterY >= 0 && // Límite superior
+                newCharacterY < mapHeight  // Límite inferior
+            ) {
+                characterX = newCharacterX;
+                characterY = newCharacterY;
 
-    function checkInteractions() {
-        for (let i = 0; i < objects.length; i++) {
-            const object = objects[i];
-            if (isColliding(player, object)) {
-                console.log('Interacted with object ' + (i + 1));
+                character.style.top = characterY + 'px';
+                character.style.left = characterX + 'px';
             }
         }
     }
 
-    function isColliding(element1, element2) {
-        const rect1 = element1.getBoundingClientRect();
-        const rect2 = element2.getBoundingClientRect();
+    window.addEventListener('keydown', moveCharacter);
 
-        return !(rect1.right < rect2.left || 
-                 rect1.left > rect2.right || 
-                 rect1.bottom < rect2.top || 
-                 rect1.top > rect2.bottom);
+    const map = document.getElementById('map');
+    map.style.width = mapWidth + 'px';
+    map.style.height = mapHeight + 'px';
+
+    for (let row = 0; row < gridHeight; row++) {
+        for (let col = 0; col < gridWidth; col++) {
+            const tile = document.createElement('div');
+            tile.classList.add('tile');
+            map.appendChild(tile);
+        }
     }
 
-    const keyMap = {
-        'ArrowUp': { x: 0, y: -gridSize },
-        'ArrowDown': { x: 0, y: gridSize },
-        'ArrowLeft': { x: -gridSize, y: 0 },
-        'ArrowRight': { x: gridSize, y: 0 },
-        'w': { x: 0, y: -gridSize },
-        's': { x: 0, y: gridSize },
-        'a': { x: -gridSize, y: 0 },
-        'd': { x: gridSize, y: 0 }
-    };
+    const objects = document.getElementsByClassName('object');
+    for (let i = 0; i < objects.length; i++) {
+        objects[i].addEventListener('click', interact);
+    }
 
-    document.addEventListener('keydown', function(event) {
-        const key = event.key.toLowerCase();
-        const move = keyMap[key];
-
-        if (move) {
-            movePlayer(move.x, move.y);
-        }
-    });
+    function interact() {
+        alert('Object clicked!');
+        // Aquí puedes agregar tu lógica para la interacción con el objeto
+    }
 });
+
+
+
 
 
 
