@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let characterX = stepSize;
     let characterY = stepSize;
     let hasInteracted = false;
+    let isKarinaFollowing = true;
 
     function moveCharacter(event) {
         const key = event.key.toLowerCase();
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 character.style.top = characterY + 'px';
                 character.style.left = characterX + 'px';
 
-                if (hasInteracted) {
+                if (hasInteracted && isKarinaFollowing) {
                     const karinaObject = document.getElementById('karina-object');
                     karinaObject.style.display = 'block';
                     const objectOffsetX = dx * -1; // Offset en el eje X
@@ -49,16 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 
             }
-        }
-    }
-
-    function handleKarinaObjectClick() {
-        const shouldStopFollowing = confirm('¿Qué acción deseas realizar con karina-object?\n\n- Cancelar: No hacer nada\n- Aceptar: Dejar de seguir al personaje');
-
-        if (shouldStopFollowing) {
-            // Dejar de seguir al personaje
-            const karinaObject = document.getElementById('karina-object');
-            karinaObject.style.display = 'none';
         }
     }
 
@@ -85,6 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Object clicked!');
         hasInteracted = true;
         // Aquí puedes agregar tu lógica para la interacción con el objeto
+    }
+
+    function handleKarinaObjectClick() {
+        const shouldStopFollowing = confirm('¿Qué acción deseas realizar con karina-object?\n\n- Cancelar: No hacer nada\n- Aceptar: Dejar de seguir al personaje');
+
+        if (shouldStopFollowing) {
+            isKarinaFollowing = false;
+        } else {
+            isKarinaFollowing = true;
+        }
     }
 
     const karinaObject = document.getElementById('karina-object');
