@@ -27,7 +27,7 @@ body {
     background: #222222;
     border-radius: 10px;
     overflow: hidden;
-    margin-top: 40px;
+    margin-top: 0px;
     box-shadow: 0 0 50px #1f8ecd;
 }
 
@@ -56,6 +56,15 @@ body {
     cursor: pointer;
 }
 
+#red-object {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: calc((1 - 1) * 50px); /* Fila 3 (empezando desde 1) */
+    left: calc((2 - 1) * 50px); /* Columna 4 (empezando desde 1) */
+}
+
+
 #map:before {
     content: '';
     position: absolute;
@@ -63,8 +72,9 @@ body {
     left: -1px;
     right: -1px;
     bottom: -1px;
-    border: 1px solid black;
+    /* border: 1px solid black; */ /* Comenta o elimina esta línea */
 }
+
 
 textarea {
     display: block;
