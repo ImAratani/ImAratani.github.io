@@ -74,26 +74,26 @@ document.addEventListener('DOMContentLoaded', () => {
     function interact() {
         if (this.id === 'karina-object') {
             openModal('Feliz cumpleaños!', 'Te quiero', 'Deberías descansar');
+        } else if (this.id === 'lit-object') {
+            const litObject = document.getElementById('lit-object');
+            litObject.addEventListener('click', toggleLight);
+
+            function toggleLight() {
+                litObject.classList.toggle('off');
+                map.classList.toggle('dark');
+
+                const objects = document.getElementsByClassName('object');
+                for (let i = 0; i < objects.length; i++) {
+                    objects[i].classList.toggle('off');
+                }
+            }
+
         } else {
             alert('Object clicked!');
             hasInteracted = true;
-            // Aquí puedes agregar tu lógica para la interacción con otros objetos
+
         }
     }
-
-    const litObject = document.getElementById('lit-object');
-    litObject.addEventListener('click', toggleLight);
-
-    function toggleLight() {
-        litObject.classList.toggle('off');
-        map.classList.toggle('dark');
-    
-        const objects = document.getElementsByClassName('object');
-        for (let i = 0; i < objects.length; i++) {
-            objects[i].classList.toggle('off');
-        }
-    }
-    
 
     function openModal(title, option1, option2) {
         const modal = document.getElementById('modal');
