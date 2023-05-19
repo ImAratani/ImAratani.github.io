@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Verifica que el personaje no salga de los límites del cuadrado contenedor
             if (
                 newCharacterX >= 0 && // Límite izquierdo
-                newCharacterX < mapWidth && // Límite derecho
+                newCharacterX < mapWidth - stepSize && // Límite derecho
                 newCharacterY >= 0 && // Límite superior
-                newCharacterY < mapHeight  // Límite inferior
+                newCharacterY < mapHeight - stepSize * 2 // Límite inferior
             ) {
                 characterX = newCharacterX;
                 characterY = newCharacterY;
@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     karinaObject.style.top = newObjectY + 'px';
                     karinaObject.style.left = newObjectX + 'px';
                 }
-                
             }
         }
     }
@@ -73,24 +72,68 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function interact() {
-        alert('Object clicked!');
-        hasInteracted = true;
-        // Aquí puedes agregar tu lógica para la interacción con el objeto
-    }
-
-    function handleKarinaObjectClick() {
-        const shouldStopFollowing = confirm('¿Qué acción deseas realizar con karina-object?\n\n- Cancelar: No hacer nada\n- Aceptar: Dejar de seguir al personaje');
-
-        if (shouldStopFollowing) {
-            isKarinaFollowing = false;
+        if (this.id === 'karina-object') {
+            openModal('Feliz cumpleaños!', 'Te quiero', 'Deberías descansar');
         } else {
-            isKarinaFollowing = true;
+            alert('Object clicked!');
+            hasInteracted = true;
+            // Aquí puedes agregar tu lógica para la interacción con otros objetos
         }
     }
 
+    const litObject = document.getElementById('lit-object');
+    litObject.addEventListener('click', toggleLight);
+
+    function toggleLight() {
+        litObject.classList.toggle('off');
+        map.classList.toggle('dark');
+    
+        const objects = document.getElementsByClassName('object');
+        for (let i = 0; i < objects.length; i++) {
+            objects[i].classList.toggle('off');
+        }
+    }
+    
+
+    function openModal(title, option1, option2) {
+        const modal = document.getElementById('modal');
+        const modalTitle = modal.querySelector('.modal-title');
+        const modalMessage = modal.querySelector('.modal-message');
+        const modalOptions = modal.querySelector('.modal-options');
+
+        modalTitle.textContent = '';
+        modalMessage.textContent = 'Feliz cumpleaños!';
+
+        modalOptions.innerHTML = '';
+
+        const optionButton1 = document.createElement('button');
+        optionButton1.textContent = option1;
+        optionButton1.addEventListener('click', () => {
+            closeModal();
+        });
+        modalOptions.appendChild(optionButton1);
+
+        const optionButton2 = document.createElement('button');
+        optionButton2.textContent = option2;
+        optionButton2.addEventListener('click', () => {
+            closeModal();
+            isKarinaFollowing = false;
+        });
+        modalOptions.appendChild(optionButton2);
+
+        modal.style.display = 'block';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        modal.style.display = 'none';
+    }
+
     const karinaObject = document.getElementById('karina-object');
-    karinaObject.addEventListener('click', handleKarinaObjectClick);
+    karinaObject.addEventListener('click', interact);
 });
+
+
 
 
 
