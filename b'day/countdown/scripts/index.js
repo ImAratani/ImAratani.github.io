@@ -2,7 +2,7 @@ const count = document.getElementById('count');
 const head = document.getElementById('head');
 
 const config = {
-  birthdate: 'Jun 23, 2023',
+  birthdate: 'Jun 23, 2022',
   name: 'Usuario',
 };
 

@@ -87,13 +87,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     objects[i].classList.toggle('off');
                 }
             }
-
+        } else if (this.id === 'top-object') {
+            const litObject = document.getElementById('lit-object');
+            if (litObject.classList.contains('off')) {
+                alert('Hay una nota sobre el escritorio, pero está demasiado oscuro para leer.');
+            } else {
+                alert('Hay una lista de la compra sobre el escritorio');
+                const shoppingList = document.getElementById('shopping-list');
+                shoppingList.classList.remove('hidden');
+            }
         } else {
             alert('Object clicked!');
             hasInteracted = true;
-
         }
     }
+
+    document.getElementById('close-list-button').addEventListener('click', () => {
+        const shoppingList = document.getElementById('shopping-list');
+        shoppingList.classList.add('hidden');
+    });
 
     function openModal(title, option1, option2) {
         const modal = document.getElementById('modal');
