@@ -23,8 +23,8 @@ let x = setInterval(function() {
     clearInterval(x);
     count.innerHTML = "<h1>Feliz cumpleaños!</h1>";
     setTimeout(function() {
-      window.location.href = "../../../b'day/log-in/log-in.htm"; // Reemplaza "ruta_del_archivo.html" con la ruta relativa o absoluta del archivo al que deseas redirigir
-    }, 2000); // Cambia el valor de 2000 a la cantidad de milisegundos que deseas esperar antes de redirigir (en este ejemplo, 2 segundos)
+      window.location.href = "../../log-in/log-in.html";
+    }, 1000);
   } else {
     document.getElementById('day').innerText = Math.floor(distance / day);
     document.getElementById('hour').innerText = Math.floor((distance % day) / hour);
