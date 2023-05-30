@@ -20,7 +20,7 @@ body {
   background: #222222;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 0 50px #1f8ecd;
+  box-shadow: 0 0 10px 5px #1f8ecd;
 }
 
 .login-header {

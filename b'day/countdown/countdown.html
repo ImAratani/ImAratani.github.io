@@ -7,11 +7,42 @@
   <title>🎂 Happy b'day</title>
 
   <link rel="stylesheet" href="styles/style.css" media="all">
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let player;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '0',
+        width: '0',
+        videoId: 'KvMY1uzSC1E',
+        playerVars: {
+          autoplay: 0,
+          loop: 1,
+          controls: 0,
+          showinfo: 0,
+          modestbranding: 1
+        }
+      });
+    }
+
+    function playAudio() {
+      player.playVideo();
+      document.getElementById('content').classList.remove('hidden');
+      document.getElementById('playButton').classList.add('hidden');
+    }
+  </script>
 </head>
 
 <body>
-  <canvas id=c></canvas>
-  <div class="container" id="count">
+  <button id="playButton" onclick="playAudio()">♥</button>
+  <div id="player"></div>
+  <div id="content" class="container hidden" id="count">
     <h1 id="head">Tiempo restante hasta tu cumpleaños:</h1>
     <ul>
       <li><span id="day"></span>días</li>
@@ -22,5 +53,10 @@
   </div>
 </body>
 <script src="scripts/index.js" charset="utf-8"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
 
 </html>
+
+
+
+
