@@ -2,7 +2,7 @@ const count = document.getElementById('count');
 const head = document.getElementById('head');
 
 const config = {
-  birthdate: 'Jun 23, 2022',
+  birthdate: 'Jun 23, 2023',
   name: 'Usuario',
 };
 
@@ -22,19 +22,7 @@ let x = setInterval(function() {
   if (distance < 0) {
     clearInterval(x);
     count.innerHTML = "<h1>Feliz cumpleaños!</h1>";
-    setTimeout(function() {
-      window.location.href = "../log-in/log-in.html";
-    }, 10600);
-  } else {
-    
-    document.getElementById('day').innerText = Math.floor(distance / day);
-    document.getElementById('hour').innerText = Math.floor((distance % day) / hour);
-    document.getElementById('minute').innerText = Math.floor((distance % hour) / minute);
-    document.getElementById('second').innerText = Math.floor((distance % minute) / second);
-  }
-}, second);
-
-var w = c.width = window.innerWidth,
+    var w = c.width = window.innerWidth,
 		h = c.height = window.innerHeight,
 		ctx = c.getContext( '2d' ),
 		
@@ -436,3 +424,14 @@ window.addEventListener( 'resize', function(){
 	
 	ctx.font = opts.charSize + 'px Verdana';
 })
+    setTimeout(function() {
+      window.location.href = "../log-in/log-in.html";
+    }, 16000);
+  } else {
+    document.getElementById('day').innerText = Math.floor(distance / day);
+    document.getElementById('hour').innerText = Math.floor((distance % day) / hour);
+    document.getElementById('minute').innerText = Math.floor((distance % hour) / minute);
+    document.getElementById('second').innerText = Math.floor((distance % minute) / second);
+  }
+}, second);
+
